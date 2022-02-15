@@ -49,9 +49,6 @@ public class Spaceship {
                 (int) (length),
                 (int) (height),
                 false);
-//same as above
-//          bitmapup = BitmapFactory.decodeResource(context.getResources(), R.drawable.spaceshipup);
-//          bitmapup = Bitmap.createScaledBitmap(bitmapup, (int) (length), (int) (height),false);
 
         bitmapright = BitmapFactory.decodeResource(context.getResources(), R.drawable.spaceshipright);
         bitmapright = Bitmap.createScaledBitmap(bitmapright, (int) (length), (int) (height),false);
@@ -91,7 +88,6 @@ public class Spaceship {
             currentBitmap = bitmapup;
             if (y+height <=0)
                 y = screenY;
-
         }
 
         if(SpaceShipMoving == DOWN){

@@ -76,9 +76,7 @@ public class SpaceGameView extends SurfaceView implements Runnable{
     private int uhID = -1;
     private int ohID = -1;
 
-    //SM Defence Bricks 4 block of 50 bricks each
-    private DefenceBrick[] bricks = new DefenceBrick[160];
-    private int numBricks = 0;
+
 
 
     // This special constructor method runs
@@ -118,16 +116,6 @@ public class SpaceGameView extends SurfaceView implements Runnable{
 //                numInvaders++;
             }
 
-
-        // Build the shelters
-        numBricks = 0;
-        for(int shelterNumber = 0; shelterNumber < 4; shelterNumber++)
-            for(int column = 0; column < 10; column ++ ) {
-                for (int row = 0; row < 4; row++) {
-                    bricks[numBricks++] = new DefenceBrick(row, column, shelterNumber, screenX, screenY);
-//                    numBricks++;
-                }
-            }
     }
 
 
@@ -238,13 +226,6 @@ public class SpaceGameView extends SurfaceView implements Runnable{
                     else
                         canvas.drawBitmap(invaders[i].getBitmap2(), invaders[i].getX(), invaders[i].getY(), paint);
 
-            // Draw the bricks if visible
-            for(int i = 0; i < numBricks; i++){
-                if(bricks[i].getVisibility()) {
-                    canvas.drawRect(bricks[i].getRect(), paint);
-                }
-            }
-
             if(bullet.getStatus())
                 canvas.drawRect(bullet.getRect(), paint);
             // Draw the score and remaining lives and Change the brush color to organge
@@ -256,9 +237,6 @@ public class SpaceGameView extends SurfaceView implements Runnable{
             // Draw everything to the screen
             ourHolder.unlockCanvasAndPost(canvas);
         }
-
-
-
     }
 
     // If SpaceGameActivity is paused/stopped

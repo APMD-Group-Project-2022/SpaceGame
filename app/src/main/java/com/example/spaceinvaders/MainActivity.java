@@ -1,5 +1,4 @@
 package com.example.spaceinvaders;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
